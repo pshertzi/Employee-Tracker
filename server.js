@@ -32,7 +32,6 @@ function mainMenu() {
             'Add department',
             'Add role',
             'Update employee role',
-            'Delete employee',
             'Exit'
                     ]
     }).then((answer) => {
@@ -57,9 +56,6 @@ function mainMenu() {
                 break;
             case 'Update employee role':
                 updateRole();
-                break;
-            case 'Delete employee':
-                deleteEmployee();
                 break;
             case 'Exit':
                 exitapp();
@@ -153,7 +149,7 @@ viewRoles = () => {
 
         connection.query(
         `INSERT INTO department (name)
-         VALUES (?,)`,
+         VALUES (?)`,
          [answer.departmentName] , 
          function(err, res) {
         if (err) throw err;
